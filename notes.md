@@ -170,3 +170,6 @@ Precalculation time: 1
 END>
 Training until now has taken 0 days 0 hours 4 minutes 44 seconds.
 
+# Install Package
+
+Execute `pip install -e .` from `opencv-utils` directory (dir containing `setup.py`)
