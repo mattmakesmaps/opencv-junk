@@ -132,3 +132,41 @@ Precalculation time: 21
 END>
 Training until now has taken 0 days 0 hours 56 minutes 39 seconds.
 ```
+
+## Run Three
+
+This run is the same as run two, but were again halving the detection window
+
+```bash
+opencv_createsamples -info positive_annotations_bike_plus_chevron.txt -vec /home/matt/Projects/opencv-junk/classifier/run_three/positive_vector_bike_plus_chevron.vec -bg /home/matt/Projects/opencv-sharrow-images/negatives.txt -num 86 -w 42 -h 17
+```
+
+**NOTE:** Increasing memory to 4096MB when executed on desktop
+```bash
+opencv_traincascade -data /home/matt/Projects/opencv-junk/classifier/run_three/cascade_xmls -numPos 73 -numNeg 172 -vec /home/matt/Projects/opencv-junk/classifier/run_three/positive_vector_bike_plus_chevron.vec -bg /home/matt/Projects/opencv-sharrow-images/negatives.txt -w 42 -h 17 -precalcValBufSize 4096 -precalcIdxBufSize 4096 -featureType HAAR
+```
+
+**OUTPUT:**
+===== TRAINING 19-stage =====
+<BEGIN
+POS count : consumed   73 : 73
+NEG count : acceptanceRatio    172 : 5.77442e-06
+Precalculation time: 1
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3|        1| 0.738372|
++----+---------+---------+
+|   4|        1| 0.773256|
++----+---------+---------+
+|   5|        1| 0.517442|
++----+---------+---------+
+|   6|        1| 0.383721|
++----+---------+---------+
+END>
+Training until now has taken 0 days 0 hours 4 minutes 44 seconds.
+
